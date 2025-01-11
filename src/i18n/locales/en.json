@@ -1,0 +1,19 @@
+{
+    "translation": {
+      "hello":"Hello",
+      "this line is translated":"This line is translated",
+      "language": "Language",
+      "balance": "Balance",
+      "login": "Login",
+      "register": "Register",
+      "Income": "Income",
+      "Expense": "Expense",
+      "Home": "Home",
+      "Transaction": "Transaction",
+      "Profile": "Profile",
+      "Settings": "Settings",
+      "Logout": "Logout",
+      "Your Transactions": "Your Transactions",
+      "Search": "Search"
+    }
+}
