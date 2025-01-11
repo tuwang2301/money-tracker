@@ -25,16 +25,8 @@ const TransactionFilterBar = () => {
           value={searchQuery}
           onChangeText={setSearchQuery}
           placeholder="Search"
+          suffix={<CustomIconButton iconName="search" onPress={() => {}} />}
         />
-        <View
-          style={{
-            position: "absolute",
-            right: 8,
-            top: 16,
-          }}
-        >
-          <CustomIconButton iconName="search" onPress={() => {}} />
-        </View>
       </View>
       <View style={{ flex: 1 }}>
         <FilterModal />

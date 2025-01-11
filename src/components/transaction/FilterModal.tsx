@@ -6,8 +6,8 @@ import COLORS from "@/src/constants/color";
 import CustomModal from "../CustomModal";
 import { useTranslation } from "react-i18next";
 import CustomButton from "../CustomButton";
-import DatePicker from "react-native-date-picker";
 import RNDateTimePicker from "@react-native-community/datetimepicker";
+import CustomDateTimePicker from "../CustomDateTimePicker";
 
 const categories = [
   {
@@ -109,6 +109,7 @@ const FilterModal = () => {
     new Date(),
     new Date(),
   ]);
+  const [show, setShow] = React.useState(false);
   const { t } = useTranslation();
 
   const selectCategory = (id: number) => {
@@ -252,15 +253,25 @@ const FilterModal = () => {
             <View
               style={{
                 flexDirection: "row",
-                flexWrap: "wrap",
                 gap: 16,
+                alignItems: "center",
               }}
             >
-              <RNDateTimePicker
-                mode="date"
+              <CustomDateTimePicker
                 value={dateRange[0]}
-                onChange={(d) => {
-                  console.log(d);
+                setValue={(date: Date) => {
+                  setDateRange([date, dateRange[1]]);
+                }}
+              />
+              <Ionicons
+                name="arrow-forward"
+                size={24}
+                color={COLORS.primaryButton}
+              />
+              <CustomDateTimePicker
+                value={dateRange[1]}
+                setValue={(date: Date) => {
+                  setDateRange([dateRange[0], date]);
                 }}
               />
             </View>

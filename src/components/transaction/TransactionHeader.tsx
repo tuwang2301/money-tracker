@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 import CustomIconButton from "../CustomIconButton";
 import COLORS from "@/src/constants/color";
 import { useTranslation } from "react-i18next";
+import AddTransactionModal from "./AddTransactionModal";
 
 const TransactionHeader = () => {
   const { t } = useTranslation();
@@ -19,12 +20,7 @@ const TransactionHeader = () => {
         <Text style={{ fontSize: 24, fontWeight: "bold", color: COLORS.text }}>
           {t("Your transactions")}
         </Text>
-        <CustomIconButton
-          iconName="add"
-          onPress={() => {}}
-          buttonSize={48}
-          iconSize={36}
-        />
+        <AddTransactionModal />
       </View>
       <View
         style={{
